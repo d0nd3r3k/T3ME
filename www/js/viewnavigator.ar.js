@@ -29,7 +29,7 @@ var ViewNavigator = function( target, backLinkCSS, bindToWindow ) {
 	this.rootElement = $('<div class="ar main-wrapper"></div>');
 	this.header = $("<div class='ar header'><div class='logo left'><img src='img/logo.jpg'></div><div class='right links'><ul><li><img  src='img/link1.ar.png'></li><li><a class='button' href='http://www.t3me.com' target='_BLANK'><img style='margin-top:6px;' src='img/link2.ar.png'></a></li><li><img src='img/link3.ar.png'></li></ul></div></div>");
 	this.content = $("<div class='ar content-wrapper' id='contentRoot'><div class='right-content' id='video'><div class='sidebar-title video-title'><span>فيديو</span></div>"+" <div id='player'></div>"+"<div class='ads'><img src='img/ad.png'/></div></div></div>");
-        this.navigation = $("<div class='ar navigation'><ul><li id='latest'><a class='red button' href='#'>الرئيسية</a></li><li id='news'><a class='blue button' href='#'>الأخبار</a></li><li id='feature'><a class='orange button' href='#'>المقالات</a></li></ul></div>");
+        this.navigation = $("<div class='ar navigation'><ul class='language'><li><a href='index.ar.html' class='button active'>AR</li><li><a href='index.html' class='button'>EN</li></ul><ul><li id='latest'><a class='red button' href='#'>الرئيسية</a></li><li id='news'><a class='blue button' href='#'>الأخبار</a></li><li id='feature'><a class='orange button' href='#'>المقالات</a></li></ul></div>");
         this.rootElement.append( this.header );
 	this.rootElement.append( this.navigation );
 	this.rootElement.append( this.content );

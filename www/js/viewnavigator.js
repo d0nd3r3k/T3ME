@@ -29,7 +29,7 @@ var ViewNavigator = function( target, backLinkCSS, bindToWindow ) {
 	this.rootElement = $('<div class="main-wrapper"></div>');
 	this.header = $("<div class='header'><div class='logo left'><img src='img/logo.jpg'></div><div class='right links'><ul><li><img  src='img/link1.png'></li><li><a class='button' href='http://www.t3me.com' target='_BLANK'><img style='margin-top:6px;' src='img/link2.png'></a></li><li><img src='img/link3.png'></li></ul></div></div>");
 	this.content = $("<div class='content-wrapper' id='contentRoot'><div class='right-content' id='video'><div class='sidebar-title video-title'><span>Video</span></div>"+" <div id='player'></div>"+"<div class='ads'><img src='img/ad.png'/></div></div></div>");
-        this.navigation = $("<div class='navigation'><ul><li id='latest'><a class='red button' href='#'>Latest</a></li><li id='news'><a class='blue button' href='#'>News</a></li><li id='feature'><a class='orange button' href='#'>Feature</a></li></ul></div>");
+        this.navigation = $("<div class='navigation'><ul><li id='latest'><a class='red button' href='#'>Latest</a></li><li id='news'><a class='blue button' href='#'>News</a></li><li id='feature'><a class='orange button' href='#'>Feature</a></li></ul> <ul class='language'><li><a href='index.html' class='button active'>EN</li><li><a href='index.ar.html' class='button'>AR</li></ul></div>");
         this.rootElement.append( this.header );
 	this.rootElement.append( this.navigation );
 	this.rootElement.append( this.content );

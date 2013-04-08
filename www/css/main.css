@@ -256,7 +256,8 @@ html,body,.main-wrapper{
 }
 .navigation ul{
     width: 500px;
-    margin: 0 153px
+    margin: 0 153px;
+    float: left;
 }
 .navigation ul li{
     display: inline;
@@ -268,7 +269,7 @@ html,body,.main-wrapper{
     text-shadow: 1px -1px 1px #222;
 }
 .red{
-    background-color: #D71920;  
+    background-color: #db1c28;  
 }
 .orange{
     background-color: #F36F21;
@@ -406,7 +407,7 @@ html,body,.main-wrapper{
     font-size: 1.4em;
 }
 .articleDesc img{
-    
+
     border-left: 16px solid #008298;
     padding-right: 12px;
     margin-top: 3px;
@@ -415,4 +416,22 @@ html,body,.main-wrapper{
 .details{
     margin-left: 15px;
     z-index: 0;
+}
+
+/*Languages*/
+ul.language{
+    width: 96px;
+    float: right;
+    margin: 0;
+}
+ul.language li a{
+    font-size: 2.4em;
+    color: #FEFEFE;
+    padding: 2px 8px;
+    text-shadow: 1px -1px 1px #222;
+    font-weight: 100;
+    background: #222;
+}
+ul.language li a.active{
+    background: #db1c28;
 }
