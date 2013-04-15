@@ -8,7 +8,8 @@ var controller = {
 };
             
 controller.init = function () {
-    var url = "http://www.t3me.com/api/v1.1/app/index.php?callback=?";
+    var host ='http://www.t3me.com/api/v1.1/app/';
+    var url = host+'index.ar.php?callback=?';
     console.log( url );
                 
     this.rootView =  {
@@ -20,11 +21,14 @@ controller.init = function () {
         url: url,
         dataType: "json",
         success: function(data, textStatus, jqXHR) {
+                         
             controller.rootData = data;
             controller.renderDefaultView();
+        //console.log(data);
+                         
         },
         error: function(jqXHR, textStatus, errorThrown) { 
-            alert("Can't get Articles"); 
+            alert("error") 
         }
     });
                 
@@ -35,9 +39,9 @@ controller.renderDefaultView = function () {
     this.rootView.view.children().remove();
                 
     var html = "";
-    
-    $(controller.rootData.item).each(function(i, item){
-        var article = item;
+    for ( var i = 0; i < controller.rootData.item.length; i ++ )
+    {
+        var article = controller.rootData.item[i];
         console.log(article);
         if(article.type == "news" || article.type == "reviews"){
             html += "<div class='single-article news' id='item-" + i + "'onclick='controller.renderDetails(\"" + i + "\")'>"; 
@@ -54,7 +58,7 @@ controller.renderDefaultView = function () {
         html += "</div>";
         html += "</div>";
         html += "<div class='clearfix'></div>";
-    });
+    }
 
     html += "</div>";
     this.rootView.view.html( html );
@@ -69,7 +73,7 @@ controller.renderDetails = function (index) {
     var article = controller.rootData.item[index];
     var html = "<div id='detail'>";
     html += "<div class='article-data'>";
-    html += "<span class='date'>"+$.format.date(new Date(article.pubDate), 'dd/MM/yyyy')+"</span> - ";
+    html += "<span class='date'>"+article.pubDate+"</span> - ";
     html += "<span class='author'>"+article.category+"</span>";
     html +=  "<h1>"+article.title+"</h1>";       
     html += "<div class='articleDesc'>";
@@ -89,7 +93,7 @@ controller.renderDetails = function (index) {
             	
     var viewDescriptor =  {
         title: article.title, 
-        backLabel: "Back",
+        backLabel: "الرجوع",
         backCallback: callback,
         view:  $(html)
     };
@@ -232,5 +236,4 @@ $(document).ready( function() {
         window.viewNavigator.refreshScroller();
     });
 				
-} );
-        
+});
